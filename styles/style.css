@@ -99,7 +99,7 @@ h1::after {
   background-color: #b5b6bc;
 }
 
-.btn {
+.next-items {
   display: none;
 }
 
@@ -133,7 +133,7 @@ h1::after {
     max-width: 224px;
   }
 
-  .btn {
+  .next-items {
     display: block;
     font-family: "Regular";
     font-size: 16px;
@@ -142,17 +142,17 @@ h1::after {
     margin-left: 32px;
   }
 
-  .btn:hover {
+  .next-items:hover {
     scale: 0.9;
     transition: 0.2s ease-in;
   }
 
-  .btn::before {
+  .next-items::before {
     content: url(../icons/icon.svg);
     padding-right: 12px;
   }
 
-  .btn_toggle::before {
+  .next-items__toggle::before {
     content: url(../icons/icon.svg);
     padding-left: 12px;
     display: inline-block;

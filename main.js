@@ -14,12 +14,12 @@
   }
   getSwiper(width)
 
-  const button = document.querySelector(".btn")
+  const button = document.querySelector(".next-items")
   button.addEventListener("click", function () {
-    button.classList.toggle("btn_toggle")
+    button.classList.toggle("next-items__toggle")
   })
 
-  const btn = document.querySelector(".btn > span")
+  const btn = document.querySelector(".next-items > span")
   btn.addEventListener("click", function () {
     btn.innerHTML =
       btn.innerHTML === "Показать всё"
