@@ -44,6 +44,11 @@ h1 {
   border: 1px solid #eaeaea;
   align-items: center;
 }
+.brands-list_item:hover {
+  border: 2px solid #dad3d3;
+  cursor: pointer;
+  transition: all 0.1s;
+}
 .brands-list_item a {
   display: flex;
   width: 100%;
