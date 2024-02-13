@@ -1,18 +1,16 @@
 ;(function () {
   const width = innerWidth
-  const getSwiper = (width) => {
-    if (width < 768) {
-      return new Swiper(".brands", {
-        slidesPerView: "auto",
-        refresh: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-      })
-    }
+  let swiper
+  const getSwiper = () => {
+    swiper = new Swiper(".brands", {
+      slidesPerView: "auto",
+      refresh: false,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    })
   }
-  getSwiper(width)
 
   const button = document.querySelector(".next-items")
   button.addEventListener("click", function () {
@@ -30,5 +28,24 @@
   const next_1120px = document.querySelector(".brands-list")
   button.addEventListener("click", function () {
     next_1120px.classList.toggle("brands-list__toggle")
+  })
+
+  document.addEventListener("DOMContentLoaded", () => {
+    if (width < 768) {
+      getSwiper()
+    }
+  })
+
+  window.addEventListener("resize", (event) => {
+    if (event.target.innerWidth >= 768 && swiper) {
+      swiper.slideTo(0, 0, false)
+      swiper.disable()
+    } else {
+      if (swiper) {
+        swiper.enable()
+      } else {
+        getSwiper()
+      }
+    }
   })
 })()
